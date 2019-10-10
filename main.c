@@ -11,13 +11,12 @@ void print_star() // definition of function
 }
 
 
-int main(int argc, char *argv[]) {
+int main(void) 
+{
 	
-	int i;
-
 	print_star(); 
 	print_star();
 	print_star(); // function call
 
-return 0;
+ return 0;
 }
