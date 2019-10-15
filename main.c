@@ -1,17 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
+
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int factorial(int n)
+{
+	int res = 1;
+	int i; 
+	
+	for (i=1; i<=n; i++)
+	{
+		res = res * i;
+	}
+
+	return res;	
+}
+
+
+int calcCombination(int n, int r)
+{
+	int high,low;
+	high = factorial(n);
+	low = factorial(n-r) * factorial(r);
+	
+	return (high/low);
+	
+}
+
 
 int main(void)
 {
-	int i;
-	int max = 45;
+	int n,r;
+	int res; // 
 	
-	srand( (unsigned) time(NULL));
-	for (i=0; i<6; i++)
-		printf("%d ", 1+rand()%max);
-		
-		return 0;
-}
+	printf("input the number n, r : ");
+	scanf("%d %d", &n, &r);
+	
+	res = calcCombination(n,r); //
+	printf("combination result is %d\n", res);
 
+	return 0; // 
+}
